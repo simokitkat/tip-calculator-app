@@ -1,0 +1,14 @@
+@use "./variables&mixins.scss" as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: $Light-grayish-cyan;
+  font-family: "Space Mono", monospace;
+}
