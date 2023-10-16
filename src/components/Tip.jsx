@@ -6,7 +6,12 @@ export const Tip = ({ tipPercentages, handleTip, handleInputTip }) => {
       <div className="tip__grid">
         {tipPercentages.map((percent, i) => {
           return (
-            <button key={i} onClick={() => handleTip(percent)}>
+            <button
+              key={i}
+              onClick={() => handleTip(percent)}
+              type="button"
+              className="green"
+            >
               {percent}%
             </button>
           );
