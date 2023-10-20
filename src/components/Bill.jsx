@@ -1,4 +1,6 @@
 /* eslint-disable react/prop-types */
+import dollar from "../assets/images/icon-dollar.svg";
+
 export default function Bill({ bill, handleBill }) {
   return (
     <section className="bill">
@@ -9,7 +11,9 @@ export default function Bill({ bill, handleBill }) {
         id="bill"
         value={bill}
         onChange={handleBill}
+        placeholder="0"
       />
+      <img src={dollar} alt="icon-dollar" className="dollar" />
     </section>
   );
 }

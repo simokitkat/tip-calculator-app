@@ -8,3 +8,29 @@ $Grayish-cyan: #7f9c9f;
 $Light-grayish-cyan: #c5e4e7;
 $Very-light-grayish-cyan: #f4fafa;
 $White: #ffffff;
+
+//Mixins
+
+@mixin number-input {
+  display: block;
+  width: 100%;
+  height: 48px;
+  border-radius: 5px;
+  background: #f3f9fa;
+  border: none;
+  text-align: right;
+  padding: 6px 17px;
+  color: #00474b;
+  font-size: 24px;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  &::placeholder {
+    font-family: "Space Mono", monospace;
+    color: #9ebbbd;
+  }
+}

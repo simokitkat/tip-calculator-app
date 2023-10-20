@@ -7,7 +7,7 @@ import Result from "./Result";
 
 export const Form = () => {
   //Bill component Logic
-  const [bill, setBill] = useState(0);
+  const [bill, setBill] = useState("");
   const changeBill = (e) => {
     setBill((prev) => {
       prev = e.target.value;
@@ -58,7 +58,7 @@ export const Form = () => {
 
   //form reset logic
   const handleReset = () => {
-    setBill(0);
+    setBill("");
     setTip(0);
     setPeopleCount(0);
     setTipAmount("0.00");

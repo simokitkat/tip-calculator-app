@@ -24,6 +24,42 @@ main {
   }
 }
 
-.green:focus {
-  background-color: green;
+form {
+  width: 920px;
+  height: 481px;
+  margin: auto;
+  background-color: $White;
+  border-radius: 25px;
+  box-shadow: 0px 32px 43px 0px rgba(79, 166, 175, 0.2);
+  display: flex;
+}
+
+/*******************
+**** Input Data ****
+*******************/
+
+.input-data {
+  width: 475px;
+  padding: 45px 48px 48px;
+
+  .bill {
+    height: 78px;
+    position: relative;
+
+    h1 {
+      color: $Dark-grayish-cyan;
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+
+    input {
+      @include number-input;
+    }
+
+    .dollar {
+      position: absolute;
+      left: 19.26px;
+      bottom: 15.67px;
+    }
+  }
 }
