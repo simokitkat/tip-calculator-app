@@ -39,3 +39,33 @@ $White: hsl(0, 0%, 100%);
     color: hsl(184, 19%, 68%);
   }
 }
+
+@mixin result-div {
+  height: 71px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .text {
+    height: 44px;
+
+    h3 {
+      color: $White;
+      font-size: 16px;
+    }
+
+    span {
+      display: block;
+      color: $Grayish-cyan;
+      font-size: 13px;
+    }
+  }
+
+  & > span {
+    display: block;
+    color: $Strong-cyan;
+    text-align: right;
+    font-size: 48px;
+    letter-spacing: -1px;
+  }
+}

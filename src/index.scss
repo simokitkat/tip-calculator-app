@@ -10,8 +10,8 @@
 
 body {
   background-color: $Light-grayish-cyan;
-  font-family: "Space Mono", monospace;
   font-size: 24px;
+  font-family: "Space Mono", monospace;
   font-weight: 700;
 }
 
@@ -38,7 +38,7 @@ form {
 
 /*******************
 **** Input Data ****
-*******************/
+********************/
 
 .input-data {
   width: 475px;
@@ -121,6 +121,56 @@ form {
       position: absolute;
       left: 17px;
       bottom: 16px;
+    }
+  }
+}
+
+/***************
+**** Result ****
+****************/
+
+.result {
+  width: 445px;
+  height: 100%;
+  padding: 32px 32px 32px 0;
+
+  .container {
+    height: 100%;
+    background-color: $Very-dark-cyan;
+    border-radius: 15px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .top {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+
+      & > div {
+        @include result-div;
+      }
+    }
+
+    .buttons {
+      display: flex;
+      gap: 25px;
+
+      button {
+        display: block;
+        height: 48px;
+        width: calc(50% - 12.5px);
+        border-radius: 5px;
+        background: #0d686d;
+        border: none;
+        color: #00474b;
+        text-align: center;
+        font-size: 20px;
+        font-family: "Space Mono", monospace;
+        font-weight: 700;
+        cursor: pointer;
+      }
     }
   }
 }
