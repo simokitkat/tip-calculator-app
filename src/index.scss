@@ -17,6 +17,8 @@ body {
 
 main {
   padding-top: 163px;
+  // min-height: 1024px;
+  height: 100vh;
 
   .logo {
     display: block;
@@ -99,6 +101,26 @@ form {
           color: hsla(180, 18%, 40%, 1);
         }
       }
+    }
+  }
+
+  .people {
+    height: 78px;
+    position: relative;
+
+    h2 {
+      @include input-heading;
+      margin-bottom: 6px;
+    }
+
+    input {
+      @include number-input;
+    }
+
+    .group {
+      position: absolute;
+      left: 17px;
+      bottom: 16px;
     }
   }
 }

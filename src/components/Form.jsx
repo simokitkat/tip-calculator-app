@@ -29,7 +29,7 @@ export const Form = () => {
   }
 
   // people component logic
-  const [peopleCount, setPeopleCount] = useState(0);
+  const [peopleCount, setPeopleCount] = useState("");
   function handlePeopleCountChange(e) {
     setPeopleCount((prev) => {
       prev = e.target.value;
@@ -60,7 +60,7 @@ export const Form = () => {
   const handleReset = () => {
     setBill("");
     setTip(0);
-    setPeopleCount(0);
+    setPeopleCount("");
     setTipAmount("0.00");
     setTotal("0.00");
   };

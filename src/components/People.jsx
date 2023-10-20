@@ -1,4 +1,6 @@
 /* eslint-disable react/prop-types */
+import group from "../assets/images/icon-person.svg";
+
 export default function People({ peopleCount, handlePeopleCountChange }) {
   return (
     <section className="people">
@@ -9,7 +11,9 @@ export default function People({ peopleCount, handlePeopleCountChange }) {
         id="people"
         value={peopleCount}
         onChange={handlePeopleCountChange}
+        placeholder="0"
       />
+      <img src={group} alt="icon-person" className="group" />
     </section>
   );
 }
