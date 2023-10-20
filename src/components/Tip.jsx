@@ -21,7 +21,7 @@ export const Tip = ({ tipPercentages, handleTip, handleInputTip }) => {
           name="tip"
           id="tip"
           onChange={handleInputTip}
-          placeholder="custom"
+          placeholder="Custom"
         />
       </div>
     </section>
