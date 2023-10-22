@@ -30,6 +30,7 @@ export const Tip = ({
           id="tip"
           onChange={handleInputTip}
           placeholder="Custom"
+          min={0}
         />
       </div>
     </section>
