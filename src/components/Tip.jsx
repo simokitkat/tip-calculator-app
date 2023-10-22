@@ -1,18 +1,26 @@
 /* eslint-disable react/prop-types */
-export const Tip = ({ tipPercentages, handleTip, handleInputTip }) => {
+export const Tip = ({
+  tipPercentages,
+  handleTip,
+  handleInputTip,
+  handleTipClass,
+}) => {
   return (
     <section className="tip">
       <h2>Select Tip %</h2>
       <div className="tip__grid">
-        {tipPercentages.map((percent, i) => {
+        {tipPercentages.map((percent) => {
           return (
             <button
-              key={i}
-              onClick={() => handleTip(percent)}
+              key={percent.id}
+              onClick={() => {
+                handleTip(percent);
+                handleTipClass(percent.id);
+              }}
               type="button"
-              className="green"
+              className={percent.focusClass}
             >
-              {percent}%
+              {percent.number}%
             </button>
           );
         })}

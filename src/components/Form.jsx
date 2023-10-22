@@ -4,45 +4,38 @@ import Bill from "./Bill";
 import { Tip } from "./Tip";
 import People from "./People";
 import Result from "./Result";
+import useBillChange from "./useBillChange";
+import useTipChange from "./useTipChange";
+import usePeopleChange from "./usePeopleChange";
 
 export const Form = () => {
-  //Bill component Logic
-  const [bill, setBill] = useState("");
-  const changeBill = (e) => {
-    setBill((prev) => {
-      prev = e.target.value;
-      return prev[0] === "0" ? prev.slice(1) : prev;
-    });
-  };
+  const [bill, changeBill, resetBill] = useBillChange();
 
-  // tip component logic
-  const tipPercentages = [5, 10, 15, 25, 50];
-  const [tip, setTip] = useState(0);
-  function handleTip(input) {
-    setTip((prev) => {
-      prev = input / 100;
-      return prev;
-    });
-  }
-  function handleInputTip(e) {
-    setTip(e.target.value / 100);
-  }
+  const [
+    tipPercentages,
+    tip,
+    handleTip,
+    handleTipClass,
+    handleInputTip,
+    resetTip,
+  ] = useTipChange();
 
-  // people component logic
-  const [peopleCount, setPeopleCount] = useState("");
-  function handlePeopleCountChange(e) {
-    setPeopleCount((prev) => {
-      prev = e.target.value;
-      return prev[0] === "0" ? prev.slice(1) : prev;
-    });
-  }
+  const [peopleCount, handlePeopleCountChange, resetPeople] = usePeopleChange();
 
   //form submission logic
   const [tipAmount, setTipAmount] = useState("0.00");
   const [total, setTotal] = useState("0.00");
+  const [error, setError] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
+
+    if (!peopleCount) {
+      setError("red");
+    } else {
+      setError("");
+    }
+
     if (bill && tip && peopleCount) {
       setTipAmount((prev) => {
         prev = ((bill * tip) / peopleCount).toFixed(2);
@@ -58,11 +51,12 @@ export const Form = () => {
 
   //form reset logic
   const handleReset = () => {
-    setBill("");
-    setTip(0);
-    setPeopleCount("");
+    resetBill();
+    resetTip();
+    resetPeople();
     setTipAmount("0.00");
     setTotal("0.00");
+    setError("");
   };
 
   return (
@@ -73,10 +67,12 @@ export const Form = () => {
           tipPercentages={tipPercentages}
           handleTip={handleTip}
           handleInputTip={handleInputTip}
+          handleTipClass={handleTipClass}
         />
         <People
           peopleCount={peopleCount}
           handlePeopleCountChange={handlePeopleCountChange}
+          errorClass={error}
         />
       </section>
       <Result tipAmount={tipAmount} total={total} />
