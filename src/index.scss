@@ -226,10 +226,12 @@ form {
 /*************************
 *** Mobile and tablet ****
 *************************/
+
 @media (width<950px) {
   main {
     padding-top: 50px;
     min-height: 933px;
+    height: 933px;
 
     .logo {
       margin: 0 auto 40.86px;
@@ -238,44 +240,33 @@ form {
 
   form {
     width: 100%;
-    // height: calc(100vh - 145px);
-    // max-height: 789px;
-    // position: absolute;
-    // bottom: 0;
-    // left: 0;
     height: 789px;
     box-shadow: 0px 32px 43px 0px hsla(186, 38%, 50%, 0.2);
     border-radius: 25px 25px 0px 0px;
-    flex-direction: column;
-    align-items: center;
     padding: 32px;
-    gap: 32px;
     display: block;
   }
 
   .input-data {
     width: 100%;
+    height: 436px;
     padding: 0;
+    margin-bottom: 32px;
 
     .tip {
       margin: 32px 0;
-      min-height: 152px;
-      max-height: 216px;
+      height: 216px;
 
       &__grid {
-        display: flex;
-        flex-wrap: wrap;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
         height: 176px;
         row-gap: 16px;
         column-gap: 16.56px;
 
-        button,
         input {
-          width: calc(50% - 8.28px);
-          height: 48px;
-        }
-
-        input {
+          width: 100%;
+          text-align: center;
           &::placeholder {
             text-align: center;
           }
@@ -288,62 +279,20 @@ form {
     width: 100%;
     height: 257px;
     padding: 0;
-  }
-}
 
-/*
-.result {
-  width: 445px;
-  height: 100%;
+    .container {
+      padding: 39px 22px 24px 24px;
 
-  .container {
-    height: 100%;
-    background-color: $Very-dark-cyan;
-    border-radius: 15px;
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+      .top {
+        & > div {
+          height: 47px;
 
-    .top {
-      display: flex;
-      flex-direction: column;
-      gap: 25px;
-
-      & > div {
-        @include result-div;
-      }
-    }
-
-    .buttons {
-      display: flex;
-      gap: 25px;
-
-      button {
-        display: block;
-        height: 48px;
-        width: calc(50% - 12.5px);
-        border-radius: 5px;
-        background: #0d686d;
-        border: none;
-        color: #00474b;
-        text-align: center;
-        font-size: 20px;
-        font-family: "Space Mono", monospace;
-        font-weight: 700;
-        cursor: pointer;
-        transition: 0.5s;
-
-        &:hover,
-        &:active {
-          background: #9fe8df;
-        }
-
-        &:focus {
-          background-color: $Strong-cyan;
+          & > span {
+            font-size: 32px;
+            letter-spacing: -0.667px;
+          }
         }
       }
     }
   }
 }
-*/
