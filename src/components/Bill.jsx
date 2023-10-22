@@ -12,6 +12,8 @@ export default function Bill({ bill, handleBill }) {
         value={bill}
         onChange={handleBill}
         placeholder="0"
+        min={0}
+        required
       />
       <img src={dollar} alt="icon-dollar" className="dollar" />
     </section>

@@ -20,6 +20,7 @@ export default function People({
         onChange={handlePeopleCountChange}
         placeholder="0"
         className={errorClass}
+        min={0}
       />
       <img src={group} alt="icon-person" className="group" />
     </section>
